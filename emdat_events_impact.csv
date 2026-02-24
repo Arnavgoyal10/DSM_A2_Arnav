@@ -1,0 +1,3 @@
+event_label,country,start_year,start_month,start_day,disaster_type,magnitude,total_events_in_year_country,total_deaths,total_affected,population_exposed,total_damages_usd,economic_damage_per_capita
+Indonesia_2018_09_28_M7.5,Indonesia,2018,9,28.0,Earthquake,7.5,1.0,4140.0,2000000.0,2000000.0,1450000000.0,725.0
+Myanmar_2025_03_M7.7,Myanmar,2025,3,,Earthquake,7.7,1.0,3820.0,1355104.0,1355104.0,11000000000.0,8117.45814343401
