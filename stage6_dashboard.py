@@ -15,6 +15,7 @@ MEDIA_EVENTS_CSV = BASE_DIR / "reliefweb_media_events.csv"
 EVENT_SUMMARY_JSON = BASE_DIR / "stage4_event_summary.json"
 
 
+@st.cache_data
 def load_data() -> Dict[str, Any]:
     media_df = pd.read_csv(
         MEDIA_ENRICHED_CSV, parse_dates=["publication_date", "event_date"]
