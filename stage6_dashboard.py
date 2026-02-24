@@ -125,7 +125,12 @@ def main():
     st.set_page_config(page_title="Disaster Pulse Dashboard", layout="wide")
 
     st.title("Disaster Pulse Dashboard")
-    st.markdown()
+    st.markdown(
+        """
+This dashboard compares **Event A (Indonesia 2018)** and **Event B (Myanmar 2025)**
+across media response and impact dimensions.
+"""
+    )
 
     data = load_data()
     media_enriched = data["media_enriched"]
