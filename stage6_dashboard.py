@@ -14,13 +14,6 @@ IMPACT_CSV = BASE_DIR / "emdat_events_impact.csv"
 MEDIA_EVENTS_CSV = BASE_DIR / "reliefweb_media_events.csv"
 EVENT_SUMMARY_JSON = BASE_DIR / "stage4_event_summary.json"
 
-"""
-print(
-    "Defining load_data: read the enriched media, impact, and summary JSON files "
-    "produced in earlier stages into pandas DataFrames and dicts for visualization."
-)
-"""
-
 
 def load_data() -> Dict[str, Any]:
     media_df = pd.read_csv(
@@ -40,14 +33,6 @@ def load_data() -> Dict[str, Any]:
         "media_events": media_events_df,
         "summary": summary,
     }
-
-
-"""
-print(
-    "Defining build_dual_timeline_figure: aggregate daily news volume per event label "
-    "and return a Plotly line chart overlaying Event A vs Event B over time."
-)
-"""
 
 
 def build_dual_timeline_figure(media_enriched: pd.DataFrame) -> go.Figure:
@@ -72,14 +57,6 @@ def build_dual_timeline_figure(media_enriched: pd.DataFrame) -> go.Figure:
     )
     fig.update_layout(legend_title_text="Event")
     return fig
-
-
-"""
-print(
-    "Defining build_resilience_radar_figure: compute magnitude, population exposure, "
-    "media coverage, and vulnerability proxy per event and plot them on a radar chart."
-)
-"""
 
 
 def build_resilience_radar_figure(
@@ -144,24 +121,11 @@ def build_resilience_radar_figure(
     return fig
 
 
-"""
-print(
-    "Defining main: Streamlit app entry point that loads the data, renders the dual "
-    "timeline and resilience radar, and exposes simple controls to inspect each event."
-)
-"""
-
-
 def main():
     st.set_page_config(page_title="Disaster Pulse Dashboard", layout="wide")
 
     st.title("Disaster Pulse Dashboard")
-    st.markdown(
-        """
-This dashboard compares **Event A (Indonesia 2018)** and **Event B (Myanmar 2025)**
-across media response and impact dimensions.
-"""
-    )
+    st.markdown()
 
     data = load_data()
     media_enriched = data["media_enriched"]
